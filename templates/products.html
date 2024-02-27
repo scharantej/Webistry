@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Gemini3</h1>
+<nav>
+<a href="/">Home</a>
+<a href="/products">Products</a>
+<a href="/cart">Cart</a>
+<a href="/checkout">Checkout</a>
+</nav>
+</header>
+<main>
+<section id="products">
+<h2>Products</h2>
+<ul class="product-list">
+{% for product in products %}
+<li class="product">
+<div class="product-image">
+<img src="{{ product.image }}">
+</div>
+<div class="product-info">
+<h3>{{ product.name }}</h3>
+<p>{{ product.description }}</p>
+<p><b>Price: ${{ product.price }}</b></p>
+<a href="/product-details/{{ product.id }}">View Details</a>
+<a href="/add-to-cart/{{ product.id }}">Add to Cart</a>
+</div>
+</li>
+{% endfor %}
+</ul>
+</section>
+</main>
+<footer>
+<p>
+Copyright Gemini3 2023
+</p>
+</footer>
+</body>
+</html>
+
+
